@@ -7,10 +7,18 @@ import java.util.List;
 public class Agenda {
     private List<Contacto> contacts; // Lista de Contacto
 
+    /**
+     * Constructor de la agenda.
+     */
     public Agenda() {
         this.contacts = new ArrayList<>();
     }
 
+    /**
+     * Metodo para añadir contactos a la agenda.
+     * @param name nombre del contacto.
+     * @param phone teléfonos del contacto.
+     */
     public void addContact(String name, String phone) {
         boolean exists = false;
         for (Contacto c : contacts) {
@@ -27,6 +35,10 @@ public class Agenda {
         }
     }
 
+    /**
+     * Metodo para borrar contactos.
+     * @param name nombre del contacto.
+     */
     public void removeContact(String name) {
         Iterator<Contacto> it = contacts.iterator();
 
@@ -39,6 +51,12 @@ public class Agenda {
         }
     }
 
+    /**
+     * Metodo para modificar el número de teléfono.
+     * @param name nombre del contacto que queremos modificar.
+     * @param oldPhone número de teléfono antiguo.
+     * @param newPhone número de teléfono nuevo.
+     */
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Contacto c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -53,6 +71,10 @@ public class Agenda {
         }
     }
 
+    /**
+     * Getter
+     * @return devuelve los contactos de la agenda.
+     */
     public List<Contacto> getContacts() {
         return this.contacts;
     }
